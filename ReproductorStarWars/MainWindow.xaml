@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReproductorStarWars"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800" Icon="icono.ico">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Right">
+            <StackPanel Orientation="Vertical">
+                <Button Width="100" Margin="10,10,10,2">Play</Button>
+                <Button Width="100" Margin="10,10,10,2">Pause</Button>
+                <Button Width="100" Margin="10,10,10,2">Stop</Button>
+            </StackPanel>
+            <StackPanel>
+                <RadioButton Content="Trailer 1"/>
+                <RadioButton Content="Trailer 2"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom">
+            <CheckBox Margin="4">Silencio</CheckBox>
+        </StackPanel>
+        <Border Margin="10" BorderBrush="Black" BorderThickness="1">
+            <MediaElement DockPanel.Dock="Left" ></MediaElement>
+        </Border>
         
-    </Grid>
+    </DockPanel>
 </Window>
