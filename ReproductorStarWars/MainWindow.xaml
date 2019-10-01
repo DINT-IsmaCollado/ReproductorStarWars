@@ -6,23 +6,35 @@
         xmlns:local="clr-namespace:ReproductorStarWars"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Icon="icono.ico">
+    <!-- Dockpanel principal -->
     <DockPanel>
-        <StackPanel DockPanel.Dock="Right">
-            <StackPanel Orientation="Vertical">
-                <Button Width="100" Margin="10,10,10,2">Play</Button>
-                <Button Width="100" Margin="10,10,10,2">Pause</Button>
-                <Button Width="100" Margin="10,10,10,2">Stop</Button>
+        
+        <!-- DockPanel Derecha -->
+        <DockPanel DockPanel.Dock="Right" >
+
+            <!-- StackPanel Arriba-Derecha -->
+            <StackPanel DockPanel.Dock="Top">
+                <Button x:Name="ButtonPlay" Width="100" Margin="10,10,10,2" Click="ButtonPlay_Click" >Play</Button>
+                <Button x:Name="ButtonPause" Width="100" Margin="10,10,10,2" Click="ButtonPause_Click">Pause</Button>
+                <Button x:Name="ButtonStop" Width="100" Margin="10,10,10,2" Click="ButtonStop_Click">Stop</Button>
             </StackPanel>
-            <StackPanel>
-                <RadioButton Content="Trailer 1"/>
-                <RadioButton Content="Trailer 2"/>
+            
+            <!-- StackPanel Abajo-Derecha -->
+            <StackPanel Orientation="Vertical" Height="30" DockPanel.Dock="Bottom" >
+                <RadioButton x:Name="RadioButtonTrailer1" Content="Trailer 1" />
+                <RadioButton x:Name="RadioButtonTrailer2" Content="Trailer 2" />
             </StackPanel>
-        </StackPanel>
+            
+        </DockPanel>
+        
+        <!-- StackPanel Abajo (Muted) -->
         <StackPanel DockPanel.Dock="Bottom">
-            <CheckBox Margin="4">Silencio</CheckBox>
+            <CheckBox x:Name="CheckBoxMuted" Margin="4" Checked="CheckBoxMuted_Checked" Unchecked="CheckBoxMuted_Unchecked">Silencio</CheckBox>
         </StackPanel>
+        
+        <!-- Reproductor Media -->
         <Border Margin="10" BorderBrush="Black" BorderThickness="1">
-            <MediaElement DockPanel.Dock="Left" ></MediaElement>
+            <MediaElement x:Name="MediaTrailer" DockPanel.Dock="Left" Source="trailer1.mp4"></MediaElement>
         </Border>
         
     </DockPanel>
