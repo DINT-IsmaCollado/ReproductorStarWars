@@ -8,30 +8,35 @@
         Title="MainWindow" Height="450" Width="800" Icon="icono.ico">
     <!-- Dockpanel principal -->
     <DockPanel>
+
+        <!-- StackPanel Abajo (Muted) -->
+        <StackPanel DockPanel.Dock="Bottom">
+            <CheckBox x:Name="CheckBoxMuted" Margin="4" Click="CheckBoxMuted_Click" >Silencio</CheckBox>
+        </StackPanel>
         
         <!-- DockPanel Derecha -->
         <DockPanel DockPanel.Dock="Right" >
 
+            
+            
             <!-- StackPanel Arriba-Derecha -->
             <StackPanel DockPanel.Dock="Top">
                 <Button x:Name="ButtonPlay" Width="100" Margin="10,10,10,2" Click="ButtonPlay_Click" >Play</Button>
                 <Button x:Name="ButtonPause" Width="100" Margin="10,10,10,2" Click="ButtonPause_Click">Pause</Button>
                 <Button x:Name="ButtonStop" Width="100" Margin="10,10,10,2" Click="ButtonStop_Click">Stop</Button>
             </StackPanel>
+
+           
             
             <!-- StackPanel Abajo-Derecha -->
-            <StackPanel Orientation="Vertical" Height="30" DockPanel.Dock="Bottom" >
-                <RadioButton x:Name="RadioButtonTrailer1" Content="Trailer 1" />
-                <RadioButton x:Name="RadioButtonTrailer2" Content="Trailer 2" />
+            <StackPanel Orientation="Vertical" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <RadioButton x:Name="RadioButtonTrailer1" Content="Trailer 1" Click="RadioButtonTrailer_Click" />
+                <RadioButton x:Name="RadioButtonTrailer2" Content="Trailer 2" Click="RadioButtonTrailer_Click"  />
             </StackPanel>
             
         </DockPanel>
         
-        <!-- StackPanel Abajo (Muted) -->
-        <StackPanel DockPanel.Dock="Bottom">
-            <CheckBox x:Name="CheckBoxMuted" Margin="4" Checked="CheckBoxMuted_Checked" Unchecked="CheckBoxMuted_Unchecked">Silencio</CheckBox>
-        </StackPanel>
-        
+
         <!-- Reproductor Media -->
         <Border Margin="10" BorderBrush="Black" BorderThickness="1">
             <MediaElement x:Name="MediaTrailer" DockPanel.Dock="Left" Source="trailer1.mp4"></MediaElement>

@@ -28,18 +28,7 @@ namespace ReproductorStarWars
 
         private void ButtonPlay_Click(object sender, RoutedEventArgs e)
         {
-            string path = Environment.CurrentDirectory;
-            if (RadioButtonTrailer1.IsChecked == true)
-            {
-                MediaTrailer.Source = new Uri(path + @"\trailer1.mp4");
-                MediaTrailer.Play();
-                
-            }
-            if (RadioButtonTrailer2.IsChecked == true)
-            {
-                MediaTrailer.Source = new Uri(path + @"\trailer2.mp4");
-                MediaTrailer.Play();
-            }
+            MediaTrailer.Play();
         }
 
         private void ButtonPause_Click(object sender, RoutedEventArgs e)
@@ -52,14 +41,21 @@ namespace ReproductorStarWars
             MediaTrailer.Stop();
         }
 
-        private void CheckBoxMuted_Checked(object sender, RoutedEventArgs e)
+        private void CheckBoxMuted_Click(object sender, RoutedEventArgs e)
         {
-            MediaTrailer.IsMuted = true;
+            if(CheckBoxMuted.IsChecked == true)
+                MediaTrailer.IsMuted = true;
+            else
+                MediaTrailer.IsMuted = false;
         }
 
-        private void CheckBoxMuted_Unchecked(object sender, RoutedEventArgs e)
+        private void RadioButtonTrailer_Click(object sender, RoutedEventArgs e)
         {
-            MediaTrailer.IsMuted = false;
+            string path = Environment.CurrentDirectory;
+            if(RadioButtonTrailer1.IsChecked == true)
+                MediaTrailer.Source = new Uri(path + @"\trailer1.mp4");
+            if(RadioButtonTrailer2.IsChecked == true)
+                MediaTrailer.Source = new Uri(path + @"\trailer2.mp4");
         }
     }
 }
