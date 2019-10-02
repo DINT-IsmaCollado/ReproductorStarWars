@@ -15,7 +15,7 @@
         </StackPanel>
         
         <!-- DockPanel Derecha -->
-        <DockPanel DockPanel.Dock="Right" >
+        <DockPanel DockPanel.Dock="Right" LastChildFill="False" >
 
             
             
@@ -30,16 +30,16 @@
             
             <!-- StackPanel Abajo-Derecha -->
             <StackPanel Orientation="Vertical" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                <RadioButton x:Name="RadioButtonTrailer1" Content="Trailer 1" Click="RadioButtonTrailer_Click" />
-                <RadioButton x:Name="RadioButtonTrailer2" Content="Trailer 2" Click="RadioButtonTrailer_Click"  />
+                <RadioButton x:Name="RadioButtonTrailer1" Content="Trailer 1" Click="RadioButtonTrailer_Click" Tag="\Trailer1.mp4" />
+                <RadioButton x:Name="RadioButtonTrailer2" Content="Trailer 2" Click="RadioButtonTrailer_Click" Tag="\Trailer2.mp4" />
             </StackPanel>
             
         </DockPanel>
         
 
         <!-- Reproductor Media -->
-        <Border Margin="10" BorderBrush="Black" BorderThickness="1">
-            <MediaElement x:Name="MediaTrailer" DockPanel.Dock="Left" Source="trailer1.mp4"></MediaElement>
+        <Border BorderBrush="Black" BorderThickness="1">
+            <MediaElement Margin="10,10,0,0" x:Name="MediaTrailer" DockPanel.Dock="Left" Source="trailer1.mp4"></MediaElement>
         </Border>
         
     </DockPanel>

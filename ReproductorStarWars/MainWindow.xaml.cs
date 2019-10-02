@@ -51,11 +51,9 @@ namespace ReproductorStarWars
 
         private void RadioButtonTrailer_Click(object sender, RoutedEventArgs e)
         {
+            RadioButton r = sender as RadioButton;
             string path = Environment.CurrentDirectory;
-            if(RadioButtonTrailer1.IsChecked == true)
-                MediaTrailer.Source = new Uri(path + @"\trailer1.mp4");
-            if(RadioButtonTrailer2.IsChecked == true)
-                MediaTrailer.Source = new Uri(path + @"\trailer2.mp4");
+            MediaTrailer.Source = new Uri(path + r.Tag);
         }
     }
 }
